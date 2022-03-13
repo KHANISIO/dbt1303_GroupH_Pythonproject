@@ -1,0 +1,56 @@
+# Group Name: Group H
+# Date of Submission: 14-03-2022
+# CAT Assignment: A number guessing game!
+import random
+
+
+age = int(input('Hello how old are you?'))
+if age >= 5:
+    print('You are eligible to play this game')
+    
+elif age < 5:
+    print('Sorry you are under age and not eligible to play this game but if you opt to continue we shall not be accountable!')
+    
+
+flag = True
+while flag:
+    num = input('type a number for an upper bound: ')
+
+    if num.isdigit():
+        print("Lets play the game!")
+        num = int(num)
+        flag = False
+    else:
+        print('invalid input! Try once more!')
+
+number = random.randint(1,num)
+
+guess = None
+count = 1
+
+while guess != number:
+    guess = input('Guess a number between 1 and ' + str(num) + ": ")
+    if guess.isdigit():
+        guess = int(guess)
+            
+    if guess < number:
+        print('The number was smaller than the secret number.')
+        count += 1
+
+    elif guess > number:
+        print('The number was lager than the secret number.')
+        print('please guess again!')
+        count += 1
+
+print()
+if guess == number:
+    print ('Congratulations, you guessed the correct secret number!')
+    print('It took you', count, 'guesses!')
+    
+    
+    
+
+
+
+ 
+                          
